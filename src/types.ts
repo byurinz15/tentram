@@ -5,7 +5,7 @@ export interface ActivityPost {
   author: string;
   avatar: string;
   timeAgo: string;
-  tag: 'PJU' | 'Kabel' | 'Jalan' | 'Komunitas' | 'Trotoar';
+  tag: 'PJU' | 'Kabel' | 'Jalan' | 'Komunitas' | 'Trotoar' | 'Lainnya';
   content: string;
   imageUrl?: string;
   upvotes: number;

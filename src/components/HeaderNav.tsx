@@ -88,7 +88,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           <div className="flex items-center gap-2.5">
             <TentramLogo size="sm" showText={false} />
             <div>
-              <span className="font-extrabold text-base text-slate-900 tracking-tight block leading-tight">
+              <span className="font-black text-base text-[#3E2768] tracking-[0.12em] uppercase block leading-tight">
                 Tentram
               </span>
               <span className="text-[10px] text-slate-400 font-medium">
