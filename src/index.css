@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Sembunyikan scrollbar menyeluruh pada perangkat mobile, tablet, dan layar sentuh (geser dengan jempol/touch) */
+@media (max-width: 1024px), (pointer: coarse), (hover: none) {
+  html,
+  body,
+  #root,
+  *,
+  *::before,
+  *::after {
+    -ms-overflow-style: none !important; /* IE dan Edge */
+    scrollbar-width: none !important; /* Firefox dan Chrome/Safari modern */
+    -webkit-overflow-scrolling: touch !important; /* Smooth inertial scrolling jempol */
+  }
+
+  /* Hilangkan scrollbar di engine WebKit/Blink (Chrome, Safari, Edge, Android WebView, iOS) */
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar,
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  div::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    background: transparent !important;
+    -webkit-appearance: none !important;
+  }
+
+  ::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner,
+  *::-webkit-scrollbar-corner {
+    display: none !important;
+    background: transparent !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Utilitas .no-scrollbar serbaguna di semua resolusi */
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb,
+.no-scrollbar::-webkit-scrollbar-track,
+.no-scrollbar::-webkit-scrollbar-corner {
+  display: none !important;
+  background: transparent !important;
+  visibility: hidden !important;
+}
+
+/* Dukungan kelancaran swipe jempol (overscroll) */
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+

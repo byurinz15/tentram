@@ -1,0 +1,6 @@
+{
+  "name": "Tentram - Navigasi Rute Aman & Laporan",
+  "description": "Platform navigasi rute aman, pelaporan fasilitas publik, dan berbagi lokasi perjalanan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
