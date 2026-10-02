@@ -360,7 +360,7 @@ export const AktivitasView: React.FC = () => {
 
   // Default Feeds View matching Aktivitas_laptop.png
   return (
-    <div className="flex-1 bg-[#F8FAFF] min-h-screen overflow-y-auto no-scrollbar px-5 sm:px-8 lg:px-12 py-6 lg:py-8 relative">
+    <div className="flex-1 bg-[#F8FAFF] h-full overflow-y-auto no-scrollbar px-5 sm:px-8 lg:px-12 pt-6 pb-32 md:py-8 relative">
       {/* Top Header Row matching Aktivitas_laptop.png */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         {/* Title */}

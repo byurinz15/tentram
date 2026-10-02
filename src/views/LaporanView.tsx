@@ -61,7 +61,7 @@ export const LaporanView: React.FC<LaporanViewProps> = ({
   // State 3: Full Mobile "Status Laporan" Screen (Matches Laporan.png right screen)
   if (showStatusLaporan) {
     return (
-      <div className="flex-1 bg-white min-h-screen flex flex-col justify-between p-6 pb-24 md:pb-12 max-w-lg mx-auto">
+      <div className="flex-1 bg-white h-full overflow-y-auto no-scrollbar flex flex-col justify-between p-6 pb-28 md:pb-12 max-w-lg mx-auto">
         <div className="text-center pt-2">
           <h2 className="text-base font-bold text-slate-800">Status Laporan</h2>
         </div>
@@ -107,7 +107,7 @@ export const LaporanView: React.FC<LaporanViewProps> = ({
   }
 
   return (
-    <div className="flex-1 bg-[#F8FAFF] min-h-screen overflow-y-auto no-scrollbar px-4 sm:px-8 lg:px-14 py-5 pb-28 md:pb-8">
+    <div className="flex-1 bg-[#F8FAFF] h-full overflow-y-auto no-scrollbar px-4 sm:px-8 lg:px-14 pt-5 pb-32 md:pb-8">
       {/* Top Header with Back Arrow (Matches Laporan.png) */}
       <div className="flex items-center justify-between mb-6 max-w-4xl mx-auto">
         <div className="flex items-center gap-3">
@@ -400,22 +400,22 @@ export const LaporanView: React.FC<LaporanViewProps> = ({
             className="w-full p-3.5 text-xs text-slate-800 placeholder:text-slate-400 bg-white border border-slate-200 rounded-2xl focus:outline-hidden focus:border-[#4854FE] focus:ring-1 focus:ring-[#4854FE] resize-none shadow-2xs"
           />
         </section>
-      </div>
 
-      {/* Mobile Sticky Bottom CTA matching Laporan.png */}
-      <div className="md:hidden fixed bottom-14 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-slate-100 z-30">
-        <button
-          onClick={handleSubmit}
-          disabled={!canSubmit || isSubmitting}
-          className={`w-full py-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md ${
-            canSubmit && !isSubmitting
-              ? 'bg-[#4854FE] hover:bg-blue-600 text-white shadow-blue-500/25'
-              : 'bg-slate-300 text-slate-100 cursor-not-allowed'
-          }`}
-        >
-          <span>{isSubmitting ? 'Mengirim...' : 'Kirim Laporan'}</span>
-          <ChevronRight className="w-4 h-4" />
-        </button>
+        {/* Mobile Kirim Laporan Button (Inside form flow, never obscuring Catatan) */}
+        <div className="md:hidden pt-2">
+          <button
+            onClick={handleSubmit}
+            disabled={!canSubmit || isSubmitting}
+            className={`w-full py-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md ${
+              canSubmit && !isSubmitting
+                ? 'bg-[#4854FE] hover:bg-blue-600 text-white shadow-blue-500/25'
+                : 'bg-slate-300 text-slate-100 cursor-not-allowed'
+            }`}
+          >
+            <span>{isSubmitting ? 'Mengirim...' : 'Kirim Laporan'}</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

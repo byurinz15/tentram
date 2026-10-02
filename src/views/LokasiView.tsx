@@ -48,7 +48,7 @@ export const LokasiView: React.FC<LokasiViewProps> = ({ onBackToHome }) => {
   const activeFriends = friendsList.filter((f) => selectedFriendIds.includes(f.id));
 
   return (
-    <div className="flex-1 bg-white min-h-screen overflow-y-auto no-scrollbar flex flex-col">
+    <div className="flex-1 bg-white h-full overflow-y-auto no-scrollbar flex flex-col">
       {/* Mobile Top Header (only on small screens) */}
       <div className="md:hidden px-4 py-3 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-20">
         <div className="flex items-center gap-2.5">
@@ -66,8 +66,8 @@ export const LokasiView: React.FC<LokasiViewProps> = ({ onBackToHome }) => {
         </div>
       </div>
 
-      {/* Main Content Area matching Shareloc_laptop.png */}
-      <div className="flex-1 px-5 sm:px-8 lg:px-12 py-6 lg:py-9 max-w-7xl">
+      {/* Main Content Area matching Shareloc_laptop.png with pb-32 for mobile bottom bar clearance */}
+      <div className="flex-1 px-5 sm:px-8 lg:px-12 pt-5 pb-32 md:py-9 max-w-7xl">
         {/* Page Title & Subtitle matching Shareloc_laptop.png */}
         <div className="mb-6">
           <h1 className="text-xl lg:text-2xl font-bold text-slate-900 leading-snug">
@@ -150,11 +150,11 @@ export const LokasiView: React.FC<LokasiViewProps> = ({ onBackToHome }) => {
               </div>
 
               {/* Action Button: Mulai Bagikan */}
-              <div className="flex justify-end pt-2">
+              <div className="flex justify-end pt-4 sm:pt-2">
                 <button
                   onClick={handleStartSharing}
                   disabled={selectedFriendIds.length === 0}
-                  className={`px-6 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition-all cursor-pointer ${
+                  className={`w-full sm:w-auto px-6 py-3 sm:py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
                     selectedFriendIds.length > 0
                       ? 'bg-[#4854FE] hover:bg-[#3D47E0] text-white shadow-xs'
                       : 'bg-slate-200 text-slate-400 cursor-not-allowed'
